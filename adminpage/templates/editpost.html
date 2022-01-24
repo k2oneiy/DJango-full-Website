@@ -1,0 +1,55 @@
+   
+{% extends "baseadmin.html" %}
+{% block content %}
+
+
+   
+   <div class="card shadow mb-4">
+    <div class="card-header py-3">
+  <h6 class="m-0 font-weight-bold text-primary">Edit Post</h6>
+</div>
+
+{% for post in p %}
+
+<div class="card-body">
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+    <label for="title">Post Title</label>
+    <input type="text" value="{{post.post_title}}" class="form-control" name="title">
+    </div>
+
+    <div class="form-group">
+    <label for="title">Post Author</label>
+    <input type="text" value="{{post.post_author}}" class="form-control" name="author">
+    </div>
+
+    <div class="form-group">
+    <label for="post_image">Post Image</label><br>
+    <img src="{{post.post_img.url}}" width="80" height="60" alt=""><br><br>
+    <input type="file" name="file" value="{{post.post_img.url}}">
+    </div>
+    <div class="form-group">
+    <label for="title">Post Tags</label>
+    <input type="text" value="{{post.post_tag}}" class="form-control" name="tag">
+    </div>
+    <div class="form-group">
+    <label for="post_content">Post Content</label>
+    <!-- <textarea class="form-control" value="sjdjgjdfgj" rows="10" cols="20" name="content"></textarea> -->
+    <input type="text" class="form-control" value="{{post.post_con}}" name="content">
+    </div>
+    <div class="form-group">
+    <input type="submit" value="Edit Post" class="btn btn-primary" name="post" >
+    </div>
+
+</form>
+
+</div>
+</div>
+</div>
+
+{% endfor %}
+
+           
+{% endblock content %}

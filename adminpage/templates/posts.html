@@ -1,0 +1,56 @@
+
+
+{% extends "baseadmin.html" %}
+
+
+{% block content %}
+    <div class="container-fluid">
+
+        <!-- Bar Chart -->
+        <div class="card shadow mb-4">
+               <div class="card-header py-3">
+                 <h6 class="m-0 font-weight-bold text-primary">View All Posts</h6>
+               </div>
+               <div class="card-body">
+               
+               <table class="table table-bordered table-hover">
+                     <thead >
+                         <tr>
+                             <th>Id</th>
+                             <th>Post Title</th>
+                             <th>Author</th>
+                             <th>Date</th>
+                             <th>Post Tag</th>
+                             <th>Image</th>
+                             <th>Edit</th>
+                             <th>Delete</th>
+
+
+                             
+                         </tr>
+                     </thead>
+                     <tbody>
+                            {%  for i in p %}
+                         <tr>
+                             <th>{{i.id}}</th>
+                             <th>{{i.post_title}}</th>
+                             <th>{{i.post_author}}</th>
+                             <th>{{i.post_date}}</th>
+                             <th>{{i.post_tag}}</th>
+                             <th><img src="{{i.post_img.url}}" alt="" width="80" height="40"></th>
+                             <th><a href="posts/edit?id={{i.id}}">Edit</a> </th>
+                             <th><a href="posts/delete?id={{i.id}}">Delete</a></th>
+
+                         </tr>
+                         {% endfor %}
+                         
+                     </tbody>
+                 </table>
+                 </div>
+             </div>
+           </div>
+
+
+           
+  {% endblock content %}
+

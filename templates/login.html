@@ -1,0 +1,61 @@
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+
+
+<section class="banner-area relative">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					Login
+				</h1>
+				<p class="text-white link-nav"><a href="index.html">User</a>
+					<span class="lnr lnr-arrow-right"></span> <a href="elements.html">
+						Login</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<br>
+
+    <div class="row">
+		<div class="col-3">
+            
+		</div>
+        <div class="col-5">
+            <div class="single-widget newsletter-widget">
+                <h4 class="title">Login</h4>
+                <div id="mc_embed_signup">
+                    <form method="post">
+                        {% csrf_token %} 
+                        <div class="form-group" style="width: 100%">
+                            <input name="name" placeholder="Name" required="" type="text">
+                            <input name="password" placeholder="Password" required="" type="password">
+                            <button class="primary-btn text-uppercase">
+                                Login
+                            </button>
+                            <br><br>
+                            <h6 style="color: #5d22f1; text-align:center"><a href="register">Create New Account </a></h6>
+                        </div>
+                        
+                    </form>
+                    {% for message in  messages %}
+                    <h3 style="color: #8050fa; text-align:center">{{message}}</h3>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+
+	{% endblock content %}
+   
+   
+	
+	

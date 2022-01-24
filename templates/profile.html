@@ -1,0 +1,81 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% static "images" as BaseUrl %}
+{% block content %}
+
+
+
+<section class="banner-area relative">
+	<div class="overlay overlay-bg"></div>
+	<div class="container">
+		<div class="row d-flex align-items-center justify-content-center">
+			<div class="about-content col-lg-12">
+				<h1 class="text-white">
+					Profile
+				</h1>
+				<p class="text-white link-nav"><a href="index.html">User</a>
+					<span class="lnr lnr-arrow-right"></span> <a href="elements.html">
+						Profile</a></p>
+			</div>
+		</div>
+	</div>
+</section>
+<br><br>
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-12">
+            <div class="single-widget newsletter-widget">
+                <h4 class="title">Profile Settings</h4>
+                <div class="row">
+                    <div class="col-6">
+                        <div>
+                            {% if user.is_authenticated %}
+                            <a href="#">
+                                <img src="{% static 'img/author/a1.png' %}" alt="" style="margin-right:230px; margin-left:230px">
+                                <br><br>
+                                <h5 style="text-align:center; color:rgb(97, 97, 212);">Name : {{user.first_name }}</h5><br>
+                                <h5 style=" text-align:center; color:rgb(97, 97, 212);">Last Login Time : {{user.last_login }}</h5><br>
+                                {% if user.is_superuser == 1 %}
+                                <h5 style="text-align:center; color:rgb(97, 97, 212);">User Type : Admin</h5><br>
+                                {% elif user.is_superuser == 0 %}
+                                <h5 style="text-align:center; color:rgb(97, 97, 212);">User Type : User</h5><br>
+                                {% endif %}
+                                <h5 style="text-align:center; color:rgb(97, 97, 212);">Gmail : {{ user.email }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div id="mc_embed_signup">
+                            <form method="post">
+                                {% csrf_token %} 
+                                <div class="form-group" style="width: 80%">
+                                    <h5 style=" color:rgb(97, 97, 212);">User Name</h5><br>
+                                    <input name="username" value="{{user.username}}" type="text">
+                                    <h5 style=" color:rgb(97, 97, 212);">First Name</h5><br>
+                                    <input name="firstname" value="{{user.first_name}}" type="text">
+                                    <h5 style="color:rgb(97, 97, 212);">Last Name</h5><br>
+                                    <input name="lastname" value="{{user.last_name}}"  type="text">
+                                    <h5 style="color:rgb(97, 97, 212);">Email</h5><br>
+                                    <input name="email" value="{{user.email}}" type="text"><br>
+                                   
+                                    <br>
+                                    <button class="primary-btn text-uppercase">
+                                        Update Profile
+                                    </button>  
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>        
+
+
+{% endif %}  
+{% endblock content %}

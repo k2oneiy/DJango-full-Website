@@ -1,0 +1,77 @@
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-8"  style="height: 200px;">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Edit Photo</h6>
+
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                <form action="photos.php?page=edit" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" value="" class="form-control" name="title">
+                </div>
+                <div class="form-group">
+                <label for="title">Caption</label>
+                <input type="text" value="" class="form-control" name="caption">
+                </div>
+                <div class="form-group">
+                <label for="title">Alternative Text</label>
+                <input type="text" value="" class="form-control" name="a_text">
+                </div>
+                <div class="form-group">
+                <label for="title">Post Tags</label>
+                <input type="text" value="" class="form-control" name="post_tags">
+                </div>
+                <div class="form-group">
+                <label for="post_content">Description</label>
+                <textarea id="body" class="form-control" value="" rows="10" cols="30" name="description"></textarea>
+                </div>
+                
+                
+                </div>
+                
+              </div>
+
+            </div>
+
+            <div class="col-xl-4 col-lg-4   ">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Photo Details</h6>
+                  <div class="dropdown no-arrow">
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                   <p><b>Uploaded On:</b> July 30 @ 5:55pm</p>
+                   <p><b>Photo Id:</b> 50</p>
+                   <p><b>File Name:</b> image.jpg</p>
+                   <p><b>File Type:</b> image</p>
+                   <p><b>File Size:</b> 35248</p>
+                   <div style="margin-left: 230px" class="form-group">
+                    <input type="submit" value="Edit Photo" class="btn btn-primary" name="add_post">
+                   </div>
+                </div>
+              </div>
+              
+            </div>
+            </form>
+            </div>
+        </div>
+    
+
+
+      <!-- End of Main Content -->
+

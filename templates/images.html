@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+    {% static "images" as BaseUrl %}
+	{% block content %}
+
+
+
+	<!-- start banner Area -->
+	<section class="banner-area relative">
+		<div class="overlay overlay-bg"></div>
+		<div class="container">
+			<div class="row d-flex align-items-center justify-content-center">
+				<div class="about-content col-lg-12">
+					<h1 class="text-white">
+						Images
+					</h1>
+					<p class="text-white link-nav"><a href="index.html">Blog</a>
+						<span class="lnr lnr-arrow-right"></span> <a href="elements.html">
+							Images</a></p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+
+	
+	<div class="container">
+
+	
+			<div class="section-top-border">
+				<h3>Image Gallery</h3>
+				<div class="row gallery-item">
+					
+					<div class="col-md-4">
+						<img src="{% static 'img/elements/g8.jpg' %}" alt="" class="single-gallery-image">
+					</div>
+					<div class="col-md-4">
+						<img src="{% static 'img/elements/g7.jpg' %}" alt="" class="single-gallery-image">
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+
+   
+			{% endblock content %}
+
+
+
+   
+
+
+	
+
+	
